@@ -11,7 +11,12 @@ function IntelForm() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const BACKEND_URL = "http://localhost:3001";
+  let BACKEND_URL = "";
+  //Change to false if in production
+  true
+    ? (BACKEND_URL = "http://localhost:3001")
+    : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
+
   //Save data into fields when the user hits the submit button.
   const [name, setName] = useState("");
   const [team, setTeam] = useState("");
@@ -58,10 +63,6 @@ function IntelForm() {
     };
 
     checkAuth();
-
-    if (!isAuthenticated) {
-      navigate("/");
-    }
   });
 
   return (

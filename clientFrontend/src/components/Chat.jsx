@@ -14,7 +14,11 @@ function Chat({ systemPrompt }) {
   const [loading, setLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const BACKEND_URL = "http://localhost:3001";
+  let BACKEND_URL = "";
+  //Change to false if in production
+  true
+    ? (BACKEND_URL = "http://localhost:3001")
+    : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 
   //Guard flag for useEffect()
   const hasFired = useRef(false);
@@ -116,6 +120,8 @@ function Chat({ systemPrompt }) {
 
   //Processes and reads an uploaded file (CSV/PDF)
   const uploadFile = async (e) => {
+    setLoading(true);
+
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -125,11 +131,10 @@ function Chat({ systemPrompt }) {
 
     reader.onload = async (event) => {
       try {
-        //Converts a CSV file into text and sends it to LLM
+        //If a CSV file, format it into into text and sends it to LLM
         if (fileType === "text/csv") {
           const csvText = event.target?.result;
           if (typeof csvText === "string") {
-            //TODO: Replace URL in fetch with backend URL
             const res = await fetch(`${BACKEND_URL}/processCSV`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -192,6 +197,8 @@ function Chat({ systemPrompt }) {
         }
       } catch (err) {
         console.error("File upload failed:\n", err);
+      } finally {
+        setLoading(false);
       }
     };
 

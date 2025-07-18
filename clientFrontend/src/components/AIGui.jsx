@@ -12,6 +12,12 @@ function AIGui() {
   const location = useLocation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  let BACKEND_URL = "";
+  //Change to false if in production
+  true
+    ? (BACKEND_URL = "http://localhost:3001")
+    : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
+
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -32,11 +38,7 @@ function AIGui() {
     };
 
     checkAuth();
-
-    if (!isAuthenticated) {
-      navigate("/");
-    }
-  });
+  }, []);
 
   const { type, name, team, story, problem, solution, market, traction, ask } =
     location.state || {};

@@ -8,14 +8,18 @@ import LogInLogOut from "./LogInLogOut";
 
 function Home() {
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
 
-  const BACKEND_URL = "http://localhost:3001";
+  let BACKEND_URL = "";
+  //Change to false if in production
+  true
+    ? (BACKEND_URL = "http://localhost:3001")
+    : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 
   //Calls the passport auth/google endpoint
   const handleLogin = () => {
     window.location.href = `${BACKEND_URL}/auth/google`;
-    checkAuth();
+    setIsAuthenticated(false);
   };
 
   //Handle Logout
