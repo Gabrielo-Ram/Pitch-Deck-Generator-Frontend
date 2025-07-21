@@ -91,8 +91,8 @@ function IntelForm() {
           {questionNumber === 0 && (
             <>
               <p className="w-full lg:text-[120%] text-[100%] text-center font-serif my-[5%] px-[4%] ">
-                Leverage the power of AI to make a short-form pitch deck
-                template.
+                Leverage the power of AI to design a short-form 2-minute
+                presentation for your solution.
               </p>
               <p className="w-full lg:text-[120%] text-[100%] text-center font-serif my-[5%] px-[4%] ">
                 Please take a minute to fill out a questionnaire—your answers

@@ -59,11 +59,12 @@ function Home() {
         className="pageSection flex flex-col justify-center items-center text-5xl/[100%]"
       >
         <h1 className="w-[50%] mb-[3%] text-center font-bold text-white font-serif">
-          Design Your Pitch Deck Template with AI
+          Design Your <b>Short-Form</b> Pitch Deck Template with AI
         </h1>
-        <h2 className="w-[65%] my-[1%] text-center text-[53%]/[110%]">
-          Instantly create a Google Slides template—designed specifically for
-          your company
+        <h2 className="w-[55%] text-center text-[53%]/[130%] text-gray-300">
+          Use AI to <b className="text-white">compress</b> your current
+          pitch-deck into a <b className="text-white">2-minute presentation</b>.
+          AI keeps your message concise, compelling, and clear.
         </h2>
         <div
           id="LogInContainer"
