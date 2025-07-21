@@ -43,6 +43,7 @@ function IntelForm() {
     navigate("/chat", { state: responses });
   };
 
+  //Checks if the user is authenticated
   useEffect(() => {
     const checkAuth = async () => {
       try {

@@ -42,8 +42,8 @@ function Home() {
 
         setIsAuthenticated(true);
       } catch (error) {
-        console.error("Auth check failed:", error);
         setIsAuthenticated(false);
+        throw new Error("Failed Auth useEffect(): ", error);
       }
     };
 
