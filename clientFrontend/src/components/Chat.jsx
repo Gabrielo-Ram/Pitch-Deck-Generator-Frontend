@@ -62,7 +62,7 @@ function Chat({ systemPrompt }) {
         console.error("Error calling /processQuery: ", error);
         setMessages((prev) => [
           ...prev,
-          "Failed to reach server... please try again later!",
+          "Failed to reach server... go to the home page and sign in with Google!",
         ]);
       } finally {
         setLoading(false);
@@ -224,7 +224,7 @@ function Chat({ systemPrompt }) {
     <div className="pageSection flex flex-col justify-end items-center">
       <div
         id="displayChat"
-        className="bg-gray-800/50 mb-[8%] h-[73.5%] w-5/8 py-[3%] pb-[7%] overflow-y-auto flex flex-col text-lg"
+        className="bg-gray-800/50 mb-[10%] h-[73.5%] w-5/8 py-[3%] pb-[7%] overflow-y-auto flex flex-col text-lg"
         ref={chatRef}
       >
         {messages.map((message, index) => {
