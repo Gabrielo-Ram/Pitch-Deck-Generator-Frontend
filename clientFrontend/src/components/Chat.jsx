@@ -16,7 +16,7 @@ function Chat({ systemPrompt }) {
 
   let BACKEND_URL = "";
   //Change to false if in production
-  true
+  false
     ? (BACKEND_URL = "http://localhost:3001")
     : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 

@@ -14,7 +14,7 @@ function AIGui() {
 
   let BACKEND_URL = "";
   //Change to false if in production
-  true
+  false
     ? (BACKEND_URL = "http://localhost:3001")
     : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 
@@ -95,7 +95,7 @@ Slide 7: The Ask
 Clearly state what the company is looking for—funding (how much?), partnerships, key hires, or other support. Make it a direct, confident call to action.
 
 Output Format:
-Return a structured response in clean, readable Markdown with each slide titled, and written in 3-6 sentences of content. The content in each slide can be put into a paragraph or a list of bullet points; format most slides to bullet points. Use engaging, persuasive language, and keep the total word count appropriate for a 2-minute spoken presentation. Suggest visual components (images or graphs) where you see fit. 
+Return a structured response in clean, readable Markdown with each slide titled, and written in 3-6 sentences of content. The content in each slide can be put into a paragraph or a list of bullet points; create bullet slides unless the user asks otherwise. Use engaging, persuasive language, and keep the total word count appropriate for a 2-minute spoken presentation. Suggest visual components (images or graphs) where you see fit. 
 
 Your goal is to help the founder win attention and interest in under 2 minutes.
 
