@@ -16,7 +16,7 @@ function Chat({ systemPrompt }) {
 
   let BACKEND_URL = "";
   //Change to false if in production
-  false
+  true
     ? (BACKEND_URL = "http://localhost:3001")
     : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 
@@ -222,12 +222,9 @@ function Chat({ systemPrompt }) {
 
   return (
     <div className="pageSection flex flex-col justify-end items-center">
-      {
-        //TODO: This chat function isn't flush with the navbar anymore
-      }
       <div
         id="displayChat"
-        className="bg-gray-800/50 mb-[8.5%] h-[73.5%] w-5/8 py-[3%] pb-[7%] overflow-y-auto flex flex-col text-lg"
+        className="bg-gray-800/50 mb-[21%] md:mb-[8.5%] h-[73.5%] w-7/8 md:w-5/8 py-[3%] pb-[12%] md:pb-[7%] overflow-y-auto flex flex-col text-lg"
         ref={chatRef}
       >
         {messages.map((message, index) => {
@@ -281,7 +278,7 @@ function Chat({ systemPrompt }) {
 
       <div
         id="userInputContainer"
-        className="absolute bg-blue-950 mb-[2%] h-6/32 w-5/8 rounded-4xl flex flex-col border-2 border-gray-700"
+        className="absolute bg-blue-950 mb-[2%] h-6/32 w-7/8 md:w-5/8 rounded-4xl flex flex-col border-2 border-gray-700"
       >
         <textarea
           id="userInput"
@@ -294,7 +291,7 @@ function Chat({ systemPrompt }) {
             }
           }}
           placeholder="Ask anything"
-          className="w-[99%] h-[70%] px-[4%] py-[3%] rounded-4xl overflow-y-auto focus:outline-none text-xl"
+          className="w-[99%] h-[70%] px-[4%] py-[3%] rounded-4xl overflow-y-auto focus:outline-none text-lg md:text-xl"
         ></textarea>
         <div
           id="chatIcons"
@@ -302,7 +299,7 @@ function Chat({ systemPrompt }) {
         >
           <label
             htmlFor="uploadCSV"
-            className="h-full w-[5%] rounded-2xl border-2 border-gray-300 hover:bg-blue-600 hover:cursor-pointer hover:rounded-lg transition-all duration-200 flex justify-center"
+            className="h-full w-[10%] md:w-[5%] rounded-2xl border-2 border-gray-300 hover:bg-blue-600 hover:cursor-pointer hover:rounded-lg transition-all duration-200 flex justify-center"
           >
             <input
               id="uploadCSV"
@@ -315,14 +312,14 @@ function Chat({ systemPrompt }) {
             <FaPlus className="h-full w-full" />
           </label>
           <div className="h-full w-[20%] flex justify-center items-center">
-            <RiGeminiFill className="h-full w-[18%] rounded-3xl" />
+            <RiGeminiFill className="h-full w-[40%] md:w-[18%] rounded-3xl" />
             <span className="pl-[5%] text-xs italic">Powered by Gemini</span>
           </div>
           {loading ? (
-            <FaSpinner className="animate-spin h-full w-[5%] text-blue-400" />
+            <FaSpinner className="animate-spin h-full w-[7%] md:w-[5%] text-blue-400" />
           ) : (
             <SlArrowUpCircle
-              className="h-full w-[5%] rounded-2xl hover:bg-blue-600 hover:cursor-pointer transition-all duration-200"
+              className="h-full w-[10%] md:w-[5%] rounded-2xl hover:bg-blue-600 hover:cursor-pointer transition-all duration-200"
               onClick={handleSubmit}
             />
           )}

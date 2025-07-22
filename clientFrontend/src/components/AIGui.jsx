@@ -14,7 +14,7 @@ function AIGui() {
 
   let BACKEND_URL = "";
   //Change to false if in production
-  false
+  true
     ? (BACKEND_URL = "http://localhost:3001")
     : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 

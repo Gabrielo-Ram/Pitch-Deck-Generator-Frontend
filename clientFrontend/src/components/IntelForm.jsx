@@ -13,7 +13,7 @@ function IntelForm() {
 
   let BACKEND_URL = "";
   //Change to false if in production
-  false
+  true
     ? (BACKEND_URL = "http://localhost:3001")
     : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 
@@ -80,14 +80,14 @@ function IntelForm() {
         >
           <IoIosExit className="size-full hover:cursor-pointer hover:text-blue-500 transition-all duration-200" />
         </div>
-        <h1 className="w-full text-center text-5xl font-bold font-serif mb-[5%]">
+        <h1 className="w-full text-center text-3xl md:text-5xl font-bold font-serif mb-[5%]">
           Pitch Deck Template
         </h1>
         <QuestionNavigator
           numberOfQuestions={7}
           currentQuestion={questionNumber}
         />
-        <div className="w-full text-center text-xl font-serif mb-[5%] px-[2%]">
+        <div className="w-full text-center text-md md:text-xl font-serif mb-[5%] px-[2%]">
           {questionNumber === 0 && (
             <>
               <p className="w-full lg:text-[120%] text-[100%] text-center font-serif my-[5%] px-[4%] ">

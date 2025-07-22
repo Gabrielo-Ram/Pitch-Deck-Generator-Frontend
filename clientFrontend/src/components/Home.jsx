@@ -12,7 +12,7 @@ function Home() {
 
   let BACKEND_URL = "";
   //Change to false if in production
-  false
+  true
     ? (BACKEND_URL = "http://localhost:3001")
     : (BACKEND_URL = "https://csv-to-slides-web-app.onrender.com");
 
@@ -56,7 +56,7 @@ function Home() {
       <Backdrop />
       <div
         id="hero"
-        className="pageSection flex flex-col justify-center items-center text-5xl/[100%]"
+        className="pageSection flex flex-col justify-center items-center text-4xl/[100%] md:text-5xl/[100%]"
       >
         <h1 className="w-[50%] mb-[3%] text-center font-bold text-white font-serif">
           Design Your <b>Short-Form</b> Pitch Deck Template with AI
@@ -90,9 +90,9 @@ function Home() {
       </div>
       <div
         id="How It Works"
-        className="pageSection w-full flex flex-col justify-center items-center text-5xl/[100%] font-serif"
+        className="pageSection w-full flex flex-col justify-center items-center text-3xl/[100%] md:text-5xl/[100%] font-serif"
       >
-        <p className="text-[80%] my-[2%] font-bold border-b-2 border-gray-500">
+        <p className="text-[80%] mt-[2%] mb-[5%] font-bold border-b-2 border-gray-500">
           How it works
         </p>
         <div className="flex justify-center w-[80%] h-[15%] text-gray-200">
