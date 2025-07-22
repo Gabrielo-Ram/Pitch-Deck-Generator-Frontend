@@ -11,6 +11,10 @@ body {
 .pageSection {
   @apply h-screen max-w-screen overflow-hidden;
 }
+b {
+  color: white;
+}
+
 /* Styles for Scrollbars */
 textarea::-webkit-scrollbar,
 textarea::-webkit-scrollbar-corner {
@@ -37,6 +41,28 @@ textarea::-webkit-scrollbar-button {
 /* Spinner Animation */
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+/* Styles for Privacy-Policy page */
+.policy h1 {
+  @apply text-6xl text-center font-bold;
+}
+
+.policy p {
+  @apply my-[2%] text-xl;
+}
+
+.policy h2 {
+  @apply my-[5%] text-4xl font-bold;
+}
+
+.policy h3,
+.policy h4 {
+  @apply my-[3%] text-3xl font-bold;
+}
+
+.policy ul li {
+  @apply text-xl list-disc ml-[5%] my-[2%];
 }
 
 /* Styling LLM response in chatbox */

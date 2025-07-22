@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AIGui from "./components/AIGui";
 import IntelForm from "./components/IntelForm";
 import Home from "./components/Home";
+import PrivacyPolicy from "./components/policy";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/form" element={<IntelForm />} />
         <Route path="/chat" element={<AIGui />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </BrowserRouter>
     // <div>

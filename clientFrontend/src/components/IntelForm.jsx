@@ -95,7 +95,7 @@ function IntelForm() {
                 presentation for your solution.
               </p>
               <p className="w-full lg:text-[120%] text-[100%] text-center font-serif my-[5%] px-[4%] ">
-                Please take a minute to fill out a questionnaire—your answers
+                Please take a minute to fill out this questionnaire—your answers
                 will help us craft a customized short-form pitch deck template
                 tailored specifically to your company.
               </p>

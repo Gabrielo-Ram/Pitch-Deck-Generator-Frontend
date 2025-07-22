@@ -95,40 +95,42 @@ function Home() {
         <p className="text-[80%] my-[2%] font-bold border-b-2 border-gray-500">
           How it works
         </p>
-        <div className="flex justify-center w-[80%] h-[15%]">
+        <div className="flex justify-center w-[80%] h-[15%] text-gray-200">
           <div className=" h-full w-[20%] flex justify-center items-center text-center">
             <span className="text-[300%]">1.</span>
           </div>
           <div className=" h-full w-full text-[50%] flex items-end">
             <p>
-              Provide Gemini with context related to your industry/solution. You
-              can do this by answering a couple of brief questions, or by
-              uploading a file.
+              Provide Gemini with context related to your industry/solution.
+              <b> Upload a PDF file</b> of your current pitch-deck, or{" "}
+              <b>fill out a form</b> about your company. (Both only take a few
+              moments)
             </p>
           </div>
         </div>
         <span className="w-[70%] my-[1%]">|</span>
-        <div className="flex justify-center w-[80%] h-[15%]">
+        <div className="flex justify-center w-[80%] h-[15%] text-gray-200">
           <div className=" h-full w-[20%] flex justify-center items-center text-center">
             <span className="text-[300%]">2.</span>
           </div>
           <div className=" h-full w-full text-[50%] flex items-end">
             <p>
-              Gemini will generate a text-based outline of your pitch deck.
-              Review it and share your feedback—ensuring the content, tone, and
-              wording align with your expectations.
+              Gemini will generate a <b>text-based outline</b> for a{" "}
+              <b>condensed version</b> of your pitch deck. Review it and share
+              your feedback—ensuring the content, tone, and wording align with
+              your expectations.
             </p>
           </div>
         </div>
         <span className="w-[70%] my-[1%]">|</span>
-        <div className="flex justify-center w-[80%] h-[15%]">
+        <div className="flex justify-center w-[80%] h-[15%] text-gray-200">
           <div className=" h-full w-[20%] flex justify-center items-center text-center">
             <span className="text-[300%]">3.</span>
           </div>
           <div className=" h-full w-full text-[50%] flex items-end">
             <p>
-              Give Gemini the go-ahead to build your full slide deck. It’ll be
-              waiting in your Google Drive!
+              Give Gemini the go-ahead to <b>build your full slide deck</b>.
+              It’ll be waiting in your Google Drive!
             </p>
           </div>
         </div>
@@ -170,7 +172,7 @@ function Home() {
                 Upload a PDF file
               </h1>
               <p className="text-[36%] mt-[1%] mb-[8%] text-center leading-[120%] px-[9%]">
-                (Company Profile or Executive Summary)
+                (Long-form Pitch Deck, Company Profile, or Executive Summary)
               </p>
               <FaFilePdf className="size-[40%]" />
             </div>
@@ -219,7 +221,14 @@ function Home() {
             </div>
           </div>
         </div>
-        <p className="text-sm text-gray-400">Created by: Gabriel Ramirez</p>
+        <p className="text-sm text-gray-400 underline hover:text-blue-500">
+          <a
+            href="http://www.linkedin.com/in/gabriel-ramirez-80550a311"
+            target="_blank"
+          >
+            Created by: Gabriel Ramirez
+          </a>
+        </p>
       </div>
     </>
   );
