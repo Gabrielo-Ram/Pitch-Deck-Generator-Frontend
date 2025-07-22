@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AIGui from "./components/AIGui";
 import IntelForm from "./components/IntelForm";
 import Home from "./components/Home";
-import PrivacyPolicy from "./components/policy";
+import PrivacyPolicy from "./components/Policy";
 
 function App() {
   return (
