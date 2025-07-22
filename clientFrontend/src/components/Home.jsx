@@ -9,6 +9,7 @@ import LogInLogOut from "./LogInLogOut";
 function Home() {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
   let BACKEND_URL = "";
   //Change to false if in production
@@ -31,6 +32,8 @@ function Home() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
+        setLoading(true);
+
         const response = await fetch(`${BACKEND_URL}/api/auth/user`, {
           credentials: "include",
         });
@@ -43,12 +46,15 @@ function Home() {
         setIsAuthenticated(true);
       } catch (error) {
         setIsAuthenticated(false);
+        console.error(error);
         throw new Error("Failed Auth useEffect(): ", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     checkAuth();
-  });
+  }, []);
 
   return (
     <>
@@ -71,10 +77,12 @@ function Home() {
           className="absolute top-[75%] w-[22%] flex justify-center"
           onClick={() => (isAuthenticated ? handleLogOut() : handleLogin())}
         >
-          {isAuthenticated ? (
-            <LogInLogOut status={false} />
+          {isLoading ? (
+            <LogInLogOut status={null} />
+          ) : isAuthenticated ? (
+            <LogInLogOut status={2} />
           ) : (
-            <LogInLogOut status={true} />
+            <LogInLogOut status={1} />
           )}
         </div>
         <div
