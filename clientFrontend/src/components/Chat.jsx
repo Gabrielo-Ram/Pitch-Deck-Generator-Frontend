@@ -113,7 +113,7 @@ function Chat({ systemPrompt }) {
       console.error("Error calling /processQuery: ", error);
       setMessages((prev) => [
         ...prev,
-        "Failed to reach server... please try again later!",
+        "Failed to reach server... please try again later.",
       ]);
     }
   };
@@ -244,26 +244,29 @@ function Chat({ systemPrompt }) {
                 key={`bot-${index}`}
                 components={{
                   h1: ({ node, ...props }) => (
-                    <h1 className="text-3xl font-bold mb-4" {...props} />
+                    <h1 className="mr-4 text-3xl font-bold mb-4" {...props} />
                   ),
                   h2: ({ node, ...props }) => (
                     <h2
-                      className="text-2xl font-semibold mt-8 mb-2"
+                      className="mr-4 text-2xl font-semibold mt-8 mb-2"
                       {...props}
                     />
                   ),
                   h3: ({ node, ...props }) => (
-                    <h3 className="text-2xl font-bold mt-6 mb-1" {...props} />
+                    <h3
+                      className="mr-4 text-2xl font-bold mt-6 mb-1"
+                      {...props}
+                    />
                   ),
                   p: ({ node, ...props }) => (
                     <p
-                      className="mb-3 leading-relaxed text-gray-100"
+                      className="mr-4 mb-3 leading-relaxed text-gray-100"
                       {...props}
                     />
                   ),
                   li: ({ node, ...props }) => (
                     <li
-                      className="list-disc list-inside ml-4 mb-1"
+                      className="mr-4 list-disc list-inside ml-4 mb-1"
                       {...props}
                     />
                   ),

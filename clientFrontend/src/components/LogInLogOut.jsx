@@ -24,10 +24,13 @@ function LogInLogOut({ status }) {
       );
     default:
       return (
-        <button className="border-2 border-gray-700 flex items-center justify-around rounded-2xl bg-gray-600 p-2 hover:cursor-not-allowed transition-all duration-200 w-full">
+        <button
+          className="border-2 border-gray-700 flex items-center justify-around rounded-2xl bg-gray-600 p-2 hover:cursor-not-allowed transition-all duration-200 w-full"
+          disabled={true}
+        >
           <FaSpinner className="animate-spin h-[80%] text-blue-400" />
-          <p className="text-[30%]/6 lg:text-[50%] 2xl:text-[75%] w-[50%] text-left">
-            Loading ...
+          <p className="text-[30%]/6 lg:text-[42%] 2xl:text-[75%] w-[70%] text-center">
+            Connecting to server ...
           </p>
         </button>
       );

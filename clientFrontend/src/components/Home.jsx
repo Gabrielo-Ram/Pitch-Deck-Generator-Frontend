@@ -20,7 +20,6 @@ function Home() {
   //Calls the passport auth/google endpoint
   const handleLogin = () => {
     window.location.href = `${BACKEND_URL}/auth/google`;
-    setIsAuthenticated(false);
   };
 
   //Handle Logout
