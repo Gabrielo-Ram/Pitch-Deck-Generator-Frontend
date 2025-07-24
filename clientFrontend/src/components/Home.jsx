@@ -29,24 +29,24 @@ function Home() {
 
   //Checks if the user is authenticated
   useEffect(() => {
-    const checkAuth = async () => {
+    const checkAuth = async (attempt = 1) => {
       try {
-        setLoading(true);
-
         const response = await fetch(`${BACKEND_URL}/api/auth/user`, {
           credentials: "include",
         });
 
         if (!response.ok) {
+          if (attempt < 3) {
+            return setTimeout(() => checkAuth(attempt + 1), 300 * attempt);
+          }
           setIsAuthenticated(false);
           return;
         }
 
         setIsAuthenticated(true);
       } catch (error) {
+        console.error("Auth check failed:", error);
         setIsAuthenticated(false);
-        console.error(error);
-        throw new Error("Failed Auth useEffect(): ", error);
       } finally {
         setLoading(false);
       }
