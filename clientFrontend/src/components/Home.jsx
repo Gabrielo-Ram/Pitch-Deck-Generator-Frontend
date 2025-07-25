@@ -31,7 +31,7 @@ function Home() {
   useEffect(() => {
     const checkAuth = async (attempt = 1) => {
       //Sets a delay
-      await new Promise((r) => setTimeout(r, 3000));
+      await new Promise((r) => setTimeout(r, 5000));
 
       try {
         const response = await fetch(`${BACKEND_URL}/api/auth/user`, {
