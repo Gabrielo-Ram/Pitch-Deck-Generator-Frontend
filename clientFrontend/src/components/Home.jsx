@@ -30,6 +30,9 @@ function Home() {
   //Checks if the user is authenticated
   useEffect(() => {
     const checkAuth = async (attempt = 1) => {
+      //Sets a delay
+      await new Promise((r) => setTimeout(r, 300));
+
       try {
         const response = await fetch(`${BACKEND_URL}/api/auth/user`, {
           credentials: "include",
